@@ -25,3 +25,15 @@ recibir la lineas de ese EmisorLineas)
 
 Padre - "Ana" -> Hijo
 Padre <- "Hola, Ana" - Hijo
+
+# Ejercicio para casa
+
+Desarrollar dos programas:
+* PadreCalculadora_S3
+* HijoCalculadora_S3
+
+El padre debe de arrancar un unico proceso hijo y permitir que el usuario envie
+operaciones desde la consola.
+
+El hijo debe de leer cada operacion, calcular el resultado y devolver una unica linea de respuesta.
+
