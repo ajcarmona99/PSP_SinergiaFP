@@ -67,3 +67,18 @@ FutureTask<Long> -> Representa la ejecución y un resultado pendiente.
 Thread -> Ejecuta la tarea.
 
 get() -> Obtiene el resultado y espera si todavía no está disponible.
+
+# Ejercicio para casa
+
+Crea un programa que procese estas temperaturas = {18, 21, 18, 25, 30, 28,
+17, 22, 26, 24, 20, 29}
+
+El programa debe utilizar dos hilos:
+
+* El primera analiza hasta mitad de las temperaturas.
+* El segundo la segunda mitad.
+
+Cada trabador debe devolver:
+
+* La suma de sus temperaturas.
+* La cantidad de temperaturas superiores a 25.
