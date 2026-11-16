@@ -72,3 +72,34 @@ Vamos a reunir los ejemplos realizados. Vamos a tener un total de dos modos:
 * Modo contar: Usa un total de cuatro trabajadores para actualizar un total y el recuento de
 la palabra java.
 
+# Resumen con tres preguntas
+
+
+| Si necesito... | Utilizo... | ¿Que garantiza nuestro ejemplos |
+| -- | --- | --- |
+| Que el trabador observe la orden de parar | Una variable volatile | Visibilidad de la bandera |
+| Conservar todos los incrementos de un total | AtomicInteger.incrementAndGet() | Incremento atómico del contador |
+| Conservar todas las apariciones de cada palabra | merge | Actualización atómica del recuento de esa clave |
+
+Antes de elegir la herramienta, indentifica que se comparte y que operacion necesitas. Si solo publicas una
+señal, piensa en visibilidad. Si varios hilos actualizan un mismo valor, piensa en qué operación debe 
+completarse como una unicidad.
+
+# Ejercicio para casa
+
+Crea un programa que tenga tres departamentos que registran indidencias. Cada departamento representa un hilo
+que procesa un lote:
+
+Aula -> RED, EQUIPO, RED, SOFTWARE
+
+Biblioteca -> SOFTWARE, RED, SOFTWARE, EQUIPO
+
+Secretaría -> EQUIPO, EQUIPO, RED, SOFTWARE
+
+El programa debe de mostrar el total en general y el numero de incidencias de cada tipo.
+
+1) Crear tres hilos, uno por lote.
+2) Compatir un unico AtomicInteger para el total y un mapa para el recuento por tipo.
+3) Por cada incidencia, actualizar el total con incrementAndGet y un merge.
+4) Arrancar todos los trabajadores antes de empezar los join.
+5) Mostrar los resultados depues de todos los join. No utilizar sleep para esperar que termine.
