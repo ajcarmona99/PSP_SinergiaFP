@@ -16,3 +16,13 @@
 | Intenta adquirir sin esperar |                No ofrece una operación.                |                    tryLock() |
 | Adquisición interrumpible    |           No al esperar entrar en el monitor           |          lockInterruptibly() |
 | Reentrante                   |                           Sí                           |                           Sí |
+
+# Ejercicio para casa 
+
+Crea un programa que cumpla lo siguiente:
+
+Una tienda empieza con 100000 unidades, y trabajan simultaneamente:
+* Dos hilos de reposición: cada uno añade unas 20000 unidades.
+* Dos hilos de venta: Cada una retirara una unidad 15000 veces.
+
+Realiza dicho programa tanto con el synchronized como con el ReentrantLock.
